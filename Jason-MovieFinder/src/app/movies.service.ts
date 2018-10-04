@@ -12,15 +12,6 @@ export class MoviesService {
     }
 
     //Retrive the catogary info from api.thmoviedb.org
-    //  public getGenres() {
-    //     var searchPara = new URLSearchParams();
-    //     searchPara.set('language', 'en-US');
-    //     searchPara.set('api_key', this.apikey);
-    //     return this._jsonp.get('https://api.themoviedb.org/3/genre/movie/list?callback=JSONP_CALLBACK', {searchPara})
-    //         .map(res => {
-    //             return res.json();
-    //         })         
-    //  }
     public  getGenres() {
         var search = new URLSearchParams();
         search.set('language', 'en-US');
@@ -28,7 +19,7 @@ export class MoviesService {
         return this._jsonp.get('https://api.themoviedb.org/3/genre/movie/list?callback=JSONP_CALLBACK', {search})
           .map(res => {
             return res.json();
-          })
-      }
+        })
+    }
 
 }
