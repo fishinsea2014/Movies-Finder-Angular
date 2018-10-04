@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { MoviesService } from './movies.service';
+import { Subscriber } from 'rxjs';
+import { httpFactory } from '@angular/http/src/http_module';
 
 interface ManuItem {
   id: number;
@@ -15,9 +18,19 @@ const ManuItems: ManuItem[] =[
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+
+  providers:[MoviesService]
 })
 export class AppComponent {
   title = 'Jason-MovieFinder';
-  genres= ManuItems;
+  //genres= ManuItems;
+  genres: Array<Object>;
+
+  //Retrive category info from server
+  constructor (private http:MoviesService) {
+    this.http.getGenres().subscribe(res =>{
+      this.genres = res.genres;
+    })
+  }
 }
