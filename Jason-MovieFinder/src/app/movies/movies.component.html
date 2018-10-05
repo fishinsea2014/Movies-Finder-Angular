@@ -17,7 +17,9 @@
 <h3 class="orange-text">Top Rated Movies</h3>
 <div class="row is-flex">
         <div class="col-sm-6 col-md-4 col-lg-3 col-xs-6" *ngFor="let movie of topRatedMovies">
-            <div class="thumbnail">
+            
+            <movie-view [movie]='movie'></movie-view>
+            <!-- <div class="thumbnail">
                 <img src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" >
                 <div class="caption">
                     <h4 class="text-ellipsis">
@@ -32,24 +34,6 @@
                     </small>
                     </p>
                 </div> 
-            </div>
-        </div>
-    <!-- <div class="col-sm-6 col-md-4 col-lg-3 col-xs-6">
-        <img src="assets/imgs/sample.jpg">
-        <div class="caption">   
-            <h4 class="text-elipsis">
-                <a title="title">name</a>
-            </h4>
-            <p><strong>First Air Date: </strong>01-01-2018</p>
-            <p>
-                <a >View Details &raquo;</a>
-                <small class="label label-success pull-right">
-                    8.0
-                    <i class="glyphicon glyphion-star"></i>
-                </small>
-            </p>
-
-        </div>
-
-    </div> -->
+            </div> -->
+        </div>    
 </div>
