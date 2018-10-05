@@ -6,8 +6,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule, JsonpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import {MoviesComponent} from './movies/movies.component';
-import {UpcomingComponent} from './upcoming/upcoming.component';
+import { MoviesComponent} from './movies/movies.component';
+import { UpcomingComponent} from './upcoming/upcoming.component';
+import { GenresComponent } from './genres/genres.component'
 import { appRoutes } from './app.routes';
 
 
@@ -15,7 +16,8 @@ import { appRoutes } from './app.routes';
   declarations: [
     AppComponent,
     MoviesComponent,
-    UpcomingComponent
+    UpcomingComponent,
+    GenresComponent
   ],
   imports: [
     BrowserModule,

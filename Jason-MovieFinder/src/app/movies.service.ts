@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-//import { Jsonp, URLSearchParams } from '@angular/http';
 import  {Jsonp, URLSearchParams } from '@angular/http';
 import 'rxjs/Rx';
 
@@ -8,6 +7,7 @@ export class MoviesService {
     apikey: string;
 
     constructor(private _jsonp: Jsonp) {
+        //apikey is the token for api.themoviedb.org
         this.apikey = "fed69657ba4cc6e1078d2a6a95f51c8c";
     }
 
@@ -22,4 +22,23 @@ export class MoviesService {
         })
     }
 
+    //Retrive movie list according to a genre
+    public getMoviesByGenre (id: string) {
+        var search = new URLSearchParams();
+        search.set('api_key', this.apikey);
+        return this._jsonp.get('https://api.themoviedb.org/3/genre/'+ id +'/movies?callback=JSONP_CALLBACK', {search})
+          .map(res => {
+            return res.json();
+          })
+    }
+
+    //Retrive top rate movies list 
+    public getTopRatedMovies() {
+        var search = new URLSearchParams();
+        search.set('api_key', this.apikey);
+        return this._jsonp.get('https://api.themoviedb.org/3/movie/top_rated?callback=JSONP_CALLBACK', {search})
+          .map(res => {
+            return res.json();
+          })
+    }
 }
