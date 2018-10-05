@@ -1,4 +1,4 @@
 # Summary
-This is a practice project which simulate the Movies Finder developed by Lazhari in Angular.
+This is a simple app which dispaly and search movies base on the movie database API on  https://api.themoviedb.org/. The techs utilised are Javascript, Angular. 
 
 #Dev Notes
