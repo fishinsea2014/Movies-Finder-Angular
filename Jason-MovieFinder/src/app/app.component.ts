@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { MoviesService } from './movies.service';
-import { Subscriber } from 'rxjs';
-import { httpFactory } from '@angular/http/src/http_module';
 
 interface ManuItem {
   id: number;
@@ -31,6 +29,7 @@ export class AppComponent {
   constructor (private http:MoviesService) {
     this.http.getGenres().subscribe(res =>{
       this.genres = res.genres;
+      console.log(this.genres)
     })
   }
 }

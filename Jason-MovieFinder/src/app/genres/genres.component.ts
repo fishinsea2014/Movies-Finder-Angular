@@ -15,10 +15,11 @@ export class GenresComponent {
 
     constructor (private router:ActivatedRoute,
                  private http: MoviesService) {}
-    ogOnInit(){
+    ngOnInit(){
         this.router.params.subscribe((params) =>{
             var id = params['id'];
             this.genresName = params['name'];
+            //debugger;
 
             //Call request in service
             this.http.getMoviesByGenre(id).subscribe(res => {
@@ -26,5 +27,4 @@ export class GenresComponent {
             })
         })
     }
-
 }

@@ -38,7 +38,8 @@
         <div class="collapse navbar-collapse movies-cat">
           <div class="panel-heading">Movies Category</div>
           <ul class="nav nav-stacked">
-            <a class="list-group-item" *ngFor="let genre of genres">{{genre.name}}</a>
+            <a routerLink="/genres/{{genre.id}}/{{genre.name}}" routerLinkActive="active"
+              class="list-group-item" *ngFor="let genre of genres">{{genre.name}}</a>
           </ul>
         </div>
       </nav>
