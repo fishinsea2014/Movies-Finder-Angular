@@ -25,8 +25,9 @@ export class MoviesComponent {
     searchMovies(){
         console.log("searching...")
         this.http.searchMovies(this.searchStr).subscribe(res => {
-            console.log("Search lists",this.searchLists, '| search string', this.searchStr);
             this.searchLists = res.results;
+            console.log("Search lists",this.searchLists, '| search string', this.searchStr);
+
         })
     }
 }
