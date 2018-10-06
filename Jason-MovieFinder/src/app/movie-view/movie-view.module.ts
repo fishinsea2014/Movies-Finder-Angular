@@ -15,6 +15,7 @@ import { MovieViewComponent } from './movie-view.component';
         BrowserModule,
         FormsModule
     ],
+    //The mudule will be referenced by other modules, need to be exported.
     exports:[
         CommonModule,
         MovieViewComponent
