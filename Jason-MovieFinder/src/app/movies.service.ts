@@ -41,4 +41,17 @@ export class MoviesService {
             return res.json();
           })
     }
+
+    //Search movies according to key words
+    public searchMovies (searchStr: string) {
+        var search = new URLSearchParams();
+        search.set('sort_by','popularity.desc');
+        search.set('query', searchStr);
+        search.set('api_key', this.apikey);
+        return this._jsonp.get('https://api.themoviedb.org/3/search/movie?callback=JSONP_CALLBACK', {search})
+            .map(res => {
+                console.log('searching response', res)
+                return res.json();
+            })
+    }
 }

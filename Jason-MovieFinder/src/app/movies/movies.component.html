@@ -4,9 +4,9 @@
         <div class="form-group">
             <div class="input-group">
                 <input type="text" class="form-control" placeholder="Search for a movie"
-                    [(ngModel)]="searchStr" name="searchStr" (keyup.enter)="searchMovies()"> 
+                    [(ngModel)]="searchStr" name="searchStr" > 
                 <span class="input-group-btn">
-                    <button class="btn btn-primary" type="button" (click)="searchMovies" >
+                    <button class="btn btn-primary" type="button" (click)="searchMovies()" >
                         Go!
                     </button>
                 </span>
@@ -14,6 +14,18 @@
         </div>
     </form>
 </div>
+<!-- Display result of a search -->
+<div *ngIf="searchLists">
+    <h3 class="orange-text">Result of search</h3>
+    <div class="row is-flex">
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xs-6" *ngFor="let list of searchLists">
+            <movie-view [movie]="list"></movie-view>
+
+        </div>
+    </div>
+</div>
+
+<!-- Display top rated movies -->
 <h3 class="orange-text">Top Rated Movies</h3>
 <div class="row is-flex">
         <div class="col-sm-6 col-md-4 col-lg-3 col-xs-6" *ngFor="let movie of topRatedMovies">

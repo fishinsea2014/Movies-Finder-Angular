@@ -12,6 +12,7 @@ import { MoviesService } from '../movies.service';
 export class MoviesComponent {
     searchStr: string;
     topRatedMovies: Array<Object>;
+    searchLists: Array<Object>;
 
     constructor(private http:MoviesService){}
 
@@ -23,5 +24,9 @@ export class MoviesComponent {
 
     searchMovies(){
         console.log("searching...")
+        this.http.searchMovies(this.searchStr).subscribe(res => {
+            console.log("Search lists",this.searchLists, '| search string', this.searchStr);
+            this.searchLists = res.results;
+        })
     }
 }
