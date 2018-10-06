@@ -2,24 +2,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { FormsModule } from '@angular/forms'; 
-
-import { MovieViewComponent } from './movie-view.component';
+import { UpcomingComponent } from './upcoming.component';
+import { MovieViewModule } from '../movie-view/movie-view.module';
 
 @NgModule({
     declarations: [
-        MovieViewComponent,
+        UpcomingComponent, //Self defined component.
     ],
-
     imports: [
         BrowserModule,
-        FormsModule
-    ],
-    exports:[
         CommonModule,
-        MovieViewComponent
+        MovieViewModule,
     ],
-    providers: []    
+
+    providers: [],
 })
 
-export class MovieViewModule {}
+export class UpcomingModule{}

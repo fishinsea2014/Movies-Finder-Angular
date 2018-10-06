@@ -54,4 +54,14 @@ export class MoviesService {
                 return res.json();
             })
     }
+
+    //Get upcoming movies list.
+    getUpComingMovies() {
+        var search = new URLSearchParams();
+        search.set('api_key', this.apikey);
+        return this._jsonp.get('https://api.themoviedb.org/3/movie/upcoming?callback=JSONP_CALLBACK', {search})
+          .map(res => {
+            return res.json();
+          })
+      }
 }

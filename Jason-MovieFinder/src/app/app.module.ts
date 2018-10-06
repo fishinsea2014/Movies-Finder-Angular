@@ -7,19 +7,23 @@ import { HttpModule, JsonpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { MoviesComponent} from './movies/movies.component';
-import { UpcomingComponent} from './upcoming/upcoming.component';
-import { MovieViewComponent} from './movie-view/movie-view.component';
+//import { UpcomingComponent} from './upcoming/upcoming.component';
+//import { MovieViewComponent} from './movie-view/movie-view.component';
 import { GenresComponent } from './genres/genres.component';
 import { appRoutes } from './app.routes';
+
+//import movie-view and upcomiing modules
+import { MovieViewModule} from './movie-view/movie-view.module';
+import { UpcomingModule } from './upcoming/upcoming.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MoviesComponent,
-    UpcomingComponent,
+    //UpcomingComponent,
     GenresComponent,
-    MovieViewComponent
+    //MovieViewComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +31,11 @@ import { appRoutes } from './app.routes';
     HttpClientModule,
     HttpModule,
     JsonpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+
+    //Self defined modules
+    MovieViewModule,
+    UpcomingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

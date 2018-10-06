@@ -9,4 +9,8 @@ import { Component, Input } from '@angular/core';
 export class MovieViewComponent {
     //Get params from parent component
     @Input() movie:object;
+    ngOnInit(){
+        //console.log('movie: ',this.movie);
+    }
+    
 }
