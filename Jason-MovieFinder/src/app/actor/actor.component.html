@@ -1,1 +1,30 @@
 <div>This is actor's page</div>
+<div class="row" *ngIf="person">
+    <div class="col-md-3">
+        <img src="https://image.tmdb.org/t/p/w300/{{person.profile_path}}" *ngIf="person.profile_path">
+        <img src="asset/imgs/sample.jpg" *ngIf="!person.profile_path">
+        <div class="caption">
+            <h4 class="text-ellipsis">
+                {{person.name}}
+            </h4>
+            <p><strong>Birthday: </strong> {{person.birthday}}</p>
+            <p><strong>Place of birth: </strong> {{person.palce_of_birth}}</p>
+            <p>
+                <strong>Popularity</strong>
+                <small class="label label-success pull-right">
+                    {{person.Popularity}}
+                    <i class="glyphicon glyphicon-star"></i>
+                </small>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="col-md-9">
+    <h3 class="orange-text">Movies</h3>
+    <div class="row is-flex">
+        <div class="col-sm-3" *ngFor="let movie of movies">
+            <movie-view [movie]="movie"></movie-view>
+        </div>
+    </div>
+
+</div>

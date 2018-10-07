@@ -2,7 +2,7 @@
 <div class="row" *ngIf="movie">
     <!-- Show details of a movie -->
     <div class="col-md-4">
-        <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="" class="thumbnail">
+        <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" *ngIf="movie.poster_path" class="thumbnail">
         <p>
             <a *ngIf="movie.homepage" href="{{movie.homepage}}" class="btn btn-info btn-block" target="_blank">Visit Movies Website</a>
         </p>
