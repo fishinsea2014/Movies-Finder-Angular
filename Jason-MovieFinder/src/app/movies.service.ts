@@ -66,14 +66,14 @@ export class MoviesService {
     }
 
     //Get a profile of a movie
-  getMovie(id: string) {
-    var search = new URLSearchParams();
-    search.set('api_key', this.apikey);
-    return this._jsonp.get('https://api.themoviedb.org/3/movie/'+ id +'?callback=JSONP_CALLBACK', {search})
-      .map(res => {
-        return res.json();
-      })
-  }
+    getMovie(id: string) {
+        var search = new URLSearchParams();
+        search.set('api_key', this.apikey);
+        return this._jsonp.get('https://api.themoviedb.org/3/movie/'+ id +'?callback=JSONP_CALLBACK', {search})
+        .map(res => {
+            return res.json();
+        })
+    }
     //Get comment of a movie
     getMovieReviews(id: string) {
         var search = new URLSearchParams();
