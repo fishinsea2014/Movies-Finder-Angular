@@ -63,5 +63,64 @@ export class MoviesService {
           .map(res => {
             return res.json();
           })
+    }
+
+    //Get a profile of a movie
+  getMovie(id: string) {
+    var search = new URLSearchParams();
+    search.set('api_key', this.apikey);
+    return this._jsonp.get('https://api.themoviedb.org/3/movie/'+ id +'?callback=JSONP_CALLBACK', {search})
+      .map(res => {
+        return res.json();
+      })
+  }
+    //Get comment of a movie
+    getMovieReviews(id: string) {
+        var search = new URLSearchParams();
+        search.set('api_key', this.apikey);
+        return this._jsonp.get('https://api.themoviedb.org/3/movie/'+ id +'/reviews?callback=JSONP_CALLBACK', {search})
+          .map(res => {
+            return res.json();
+          })
+      }
+    
+      //Get credits of a movie
+    getMovieCredits(id: string) {
+        var search = new URLSearchParams();
+        search.set('api_key', this.apikey);
+        return this._jsonp.get('https://api.themoviedb.org/3/movie/'+ id +'/credits?callback=JSONP_CALLBACK', {search})
+          .map(res => {
+            return res.json();
+          })
+      }
+
+    //Get the similar movies of a movie
+    getSimilarMovies(id: string) {
+        var search = new URLSearchParams();
+        search.set('api_key', this.apikey);
+        return this._jsonp.get('https://api.themoviedb.org/3/movie/'+ id +'/similar?callback=JSONP_CALLBACK', {search})
+          .map(res => {
+            return res.json();
+          })
+      }
+
+      //Get the author of a movie
+      getPersonDetail(id:string) {
+        var search = new URLSearchParams();
+        search.set('api_key', this.apikey);
+        return this._jsonp.get('https://api.themoviedb.org/3/person/'+ id +'?callback=JSONP_CALLBACK', {search})
+          .map(res => {
+            return res.json();
+          })
+      }
+
+      //Get the cast of characters of a movie
+      getPersonCast(id:string) {
+        var search = new URLSearchParams();
+        search.set('api_key', this.apikey);
+        return this._jsonp.get('https://api.themoviedb.org/3/person/'+ id +'/movie_credits?callback=JSONP_CALLBACK', {search})
+          .map(res => {
+            return res.json();
+          })
       }
 }

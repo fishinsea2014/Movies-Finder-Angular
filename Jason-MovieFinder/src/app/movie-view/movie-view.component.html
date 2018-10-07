@@ -3,7 +3,7 @@
     <img src="assets/imgs/sample.jpg" *ngIf="!movie.poster_path">
     <div class="caption">
         <h4 class="text-ellipsis">
-            <a title="{{movie.title}}">{{movie.title}}</a>
+            <a routerLink="/movie/{{movie.id}}" title="{{movie.title}}">{{movie.title}}</a>
         </h4>
         <p><strong>First Air Date: </strong>{{movie.release_date}}</p>
         <p>
