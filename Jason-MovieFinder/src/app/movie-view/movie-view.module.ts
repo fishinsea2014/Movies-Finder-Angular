@@ -8,11 +8,13 @@ import { FormsModule } from '@angular/forms';
 
 import { MovieViewComponent } from './movie-view.component';
 import { DetailComponent } from '../detail/detail.component';
+import { ActorComponent } from '../actor/actor.component';
 
 @NgModule({
     declarations: [
         MovieViewComponent,
         DetailComponent,
+        ActorComponent
     ],
 
     imports: [
