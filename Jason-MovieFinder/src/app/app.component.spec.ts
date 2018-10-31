@@ -1,11 +1,28 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import  {HttpModule, JsonpModule } from '@angular/http';
+// import { MoviesService} from './movies.service';
+import { APP_BASE_HREF} from '@angular/common';
+import { RouterModule} from '@angular/router';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent
       ],
+      imports:[
+        // MoviesService,
+        RouterModule.forRoot([]),
+        JsonpModule
+        //Coremo
+      ],
+      providers:[
+        {
+          // MoviesService,
+          provide:APP_BASE_HREF,
+          useValue: '/'
+        }
+      ]
     }).compileComponents();
   }));
   it('should create the app', async(() => {
@@ -22,6 +39,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to Jason-MovieFinder!');
+    expect(compiled.querySelector('p').textContent).toContain('Jason Qu');
   }));
 });
