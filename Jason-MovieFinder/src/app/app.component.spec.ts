@@ -35,7 +35,7 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('Jason-MovieFinder');
   }));
-  it('should render title in a h1 tag', async(() => {
+  it('should have the name of author in a  tag', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
